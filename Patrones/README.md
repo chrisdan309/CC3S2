@@ -134,7 +134,7 @@ class Customer
   end
 end
 ```
-Vemos que el Custumer será notificado cuando el estado cambie.
+Vemos que el Customer será notificado cuando el estado cambie.
 
 ---
 De esta manera hemos aplicado los 3 patrones de diseño en esta pequeña aplicación, esto nos permitió entender
