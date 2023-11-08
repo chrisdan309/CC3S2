@@ -35,7 +35,7 @@ Otro problema sería que la aplicación sigue en ejecución, pero se comporta in
 
 Insertamos las últimas dos líneas y nos muestra:
 
-![](/img/img1.png)
+![](https://github.com/chrisdan309/CC3S2/blob/main/Debug%20and%20logging/img/img1.png?raw=true)
 
 Donde podemos visualizar los parámetros del objeto movie
 
@@ -52,7 +52,7 @@ def show
 
 Nos muestra la siguiente pantalla con los parámetros de movie
 
-![](/img/img2.png)
+![](https://github.com/chrisdan309/CC3S2/blob/main/Debug%20and%20logging/img/img2.png?raw=true)
 
 Donde podemos visualizar los parámetros al momento de detener la aplicación
 
@@ -68,7 +68,7 @@ def show
 ```
 
 Nos muestra lo siguiente en el development.log
-![](/img/img3.png)
+![](https://github.com/chrisdan309/CC3S2/blob/main/Debug%20and%20logging/img/img3.png?raw=true)
 
 El log difiere dependiendo del entorno:
 
@@ -107,6 +107,6 @@ Editamos el siguiente fragmento de código en MoviesController:
 ```
 Agregamos la línea `debugger` y ahora corremos el servidor usando `rails server` lo cual nos mostrará lo siguiente
 
-![](/img/img4.png)
+![](https://github.com/chrisdan309/CC3S2/blob/main/Debug%20and%20logging/img/img4.png?raw=true)
 
 En este caso se detiene la ejecución y nos muestra un mensaje en el terminal antes de continuar.
