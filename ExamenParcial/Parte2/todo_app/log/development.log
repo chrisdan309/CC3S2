@@ -1,0 +1,93 @@
+  [1m[35m (2.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2023-10-18 12:54:25.594897', '2023-10-18 12:54:25.594904') RETURNING "key"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateTodos (20231018125218)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE TABLE "todos" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "description" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20231018125218') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2023-10-18 09:03:24 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/komiz/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/railties-7.1.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/komiz/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/railties-7.1.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 6.4ms | Allocations: 576)
+Completed 200 OK in 104ms (Views: 32.7ms | ActiveRecord: 0.0ms | Allocations: 10092)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTodo Create (2.7ms)[0m  [1m[32mINSERT INTO "todos" ("description", "created_at", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["description", "Hello CC3S2- Kids"], ["created_at", "2023-10-18 14:05:44.570242"], ["updated_at", "2023-10-18 14:05:44.570242"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTodo Create (1.9ms)[0m  [1m[32mINSERT INTO "todos" ("description", "created_at", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["description", " Do the assignments kid "], ["created_at", "2023-10-18 14:05:44.579120"], ["updated_at", "2023-10-18 14:05:44.579120"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/" for 127.0.0.1 at 2023-10-18 09:08:37 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/komiz/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/railties-7.1.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/komiz/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/railties-7.1.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 1.9ms | Allocations: 576)
+Completed 200 OK in 35ms (Views: 7.8ms | ActiveRecord: 0.0ms | Allocations: 7200)
+
+
+Started GET "/resources" for 127.0.0.1 at 2023-10-18 09:08:55 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/resources"):
+  
+Started GET "/" for 127.0.0.1 at 2023-10-18 09:11:41 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Redirected to http://127.0.0.1:3000/todos
+Completed 301 Moved Permanently in 4ms
+
+
+Started GET "/todos" for 127.0.0.1 at 2023-10-18 09:11:41 -0500
+Processing by TodosController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering todos/index.html.erb within layouts/application
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/views/todos/index.html.erb:6
+  Rendered todos/_todo.html.erb (Duration: 0.6ms | Allocations: 248)
+  Rendered todos/_todo.html.erb (Duration: 0.1ms | Allocations: 15)
+  Rendered todos/index.html.erb within layouts/application (Duration: 43.5ms | Allocations: 64387)
+  Rendered layout layouts/application.html.erb (Duration: 445.6ms | Allocations: 169016)
+Completed 200 OK in 504ms (Views: 450.1ms | ActiveRecord: 0.8ms | Allocations: 188077)
+
+
+Started GET "/todos/1" for 127.0.0.1 at 2023-10-18 09:11:45 -0500
+Processing by TodosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/todos_controller.rb:63:in `set_todo'
+  Rendering layout layouts/application.html.erb
+  Rendering todos/show.html.erb within layouts/application
+  Rendered todos/_todo.html.erb (Duration: 0.2ms | Allocations: 28)
+  Rendered todos/show.html.erb within layouts/application (Duration: 113.6ms | Allocations: 4104)
+  Rendered layout layouts/application.html.erb (Duration: 157.1ms | Allocations: 6248)
+Completed 200 OK in 170ms (Views: 158.3ms | ActiveRecord: 0.3ms | Allocations: 9721)
+
+
+Started GET "/todos/2" for 127.0.0.1 at 2023-10-18 09:14:07 -0500
+Processing by TodosController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/todos_controller.rb:63:in `set_todo'
+  Rendering layout layouts/application.html.erb
+  Rendering todos/show.html.erb within layouts/application
+  Rendered todos/_todo.html.erb (Duration: 1.1ms | Allocations: 181)
+  Rendered todos/show.html.erb within layouts/application (Duration: 4.0ms | Allocations: 1195)
+  Rendered layout layouts/application.html.erb (Duration: 21.0ms | Allocations: 15481)
+Completed 200 OK in 39ms (Views: 23.8ms | ActiveRecord: 3.3ms | Allocations: 21578)
+
+
+Started GET "/todos/new" for 127.0.0.1 at 2023-10-18 09:14:07 -0500
+Processing by TodosController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering todos/new.html.erb within layouts/application
+  Rendered todos/_form.html.erb (Duration: 12.3ms | Allocations: 2476)
+  Rendered todos/new.html.erb within layouts/application (Duration: 14.3ms | Allocations: 2795)
+  Rendered layout layouts/application.html.erb (Duration: 23.6ms | Allocations: 4943)
+Completed 200 OK in 27ms (Views: 25.0ms | ActiveRecord: 0.0ms | Allocations: 5402)
+
+
